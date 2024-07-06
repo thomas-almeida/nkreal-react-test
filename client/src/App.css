@@ -1,0 +1,51 @@
+@import url(styles/cover-banner.css);
+@import url(styles/navbar.css);
+@import url(styles/product-item.css);
+@import url(styles/button.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+
+.font-mono {
+    font-family: 'JetBrains Mono';
+}
+
+.m-10 {
+    margin: 10px;
+}
+
+.tag {
+    border: 2px solid #63636394;
+    max-width: 230px;
+    text-align: center;
+    padding: 6px;
+    border-radius: 4px;
+}
+
+.bg-warning {
+    background-color: #F3075C;
+    color: #fff;
+}
+
+.bg-promo {
+    background-color: #35C005;
+    color: #fff;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.justify-left {
+    justify-content: left;
+}
+
+#products h2{
+    margin-bottom: 15px;
+}

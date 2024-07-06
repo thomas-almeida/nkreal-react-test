@@ -1,0 +1,12 @@
+button {
+    padding: 18px 0px;
+    margin-top: 20px;
+    width: 100%;
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-family: 'JetBrains Mono';
+    font-size: 1em;
+    cursor: pointer;
+}
