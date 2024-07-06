@@ -1,3 +1,6 @@
+
+![nk](https://i.ibb.co/d7S0JjZ/242shots-so.png)
+
 # Teste para Vaga de Desenvolvedor Front-end
 ## Descrição
 Este teste tem como objetivo avaliar suas habilidades em desenvolvimento front-end utilizando React e TypeScript. Você será responsável por criar uma aplicação simples de e-commerce com três páginas principais: lista de produtos, detalhes do produto e carrinho de compras.
