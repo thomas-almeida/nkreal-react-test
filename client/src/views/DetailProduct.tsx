@@ -5,6 +5,7 @@ import CartContext from "../components/CartContext"
 import { useContext, useEffect } from "react"
 import { productsInThisDrop } from "../data/products"
 import { Product } from "../data/types"
+import { NavLink } from "react-router-dom"
 
 export default function DetailProduct() {
 
@@ -75,10 +76,12 @@ export default function DetailProduct() {
                                             <b>A Vista no Pix</b>
                                         </div>
                                         <div className="w-75">
-                                            <Button
-                                                text="Adicionar ao Carrinho"
-                                                function={() => addToCart(productData)}
-                                            />
+                                            <NavLink to="/carrinho">
+                                                <Button
+                                                    text="Adicionar Ao Carrinho"
+                                                    function={() => addToCart(productData)}
+                                                />
+                                            </NavLink>
                                         </div>
                                     </div>
 

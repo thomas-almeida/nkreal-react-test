@@ -63,10 +63,12 @@ export default function ProducList() {
                                         </div>
                                     </div>
                                 </NavLink>
-                                <Button
-                                    text="Adicionar Ao Carrinho"
-                                    function={() => addToCart(product)}
-                                />
+                                <NavLink to="/carrinho">
+                                    <Button
+                                        text="Adicionar Ao Carrinho"
+                                        function={() => addToCart(product)}
+                                    />
+                                </NavLink>
                             </li>
                         ))
                     }
