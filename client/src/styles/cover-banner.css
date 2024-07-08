@@ -1,10 +1,9 @@
-
 .cover-banner {
-    
-    background: 
-    linear-gradient(rgba(26, 23, 23, 0.836),
-    rgba(20, 19, 19, 0.658)),
-    url(public/cover/nk-cover-1.jpg);
+
+    background:
+        linear-gradient(rgba(26, 23, 23, 0.836),
+            rgba(20, 19, 19, 0.658)),
+        url(public/cover/nk-cover-1.jpg);
 
     background-position: center;
     background-size: cover;
@@ -21,7 +20,18 @@
     text-align: center;
 }
 
-.cover-banner h1{
+.cover-banner-white {
+    padding: 30px 60px;
+    margin: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.cover-banner h1 {
     font-family: 'Oi';
     font-weight: 400;
     font-size: 100pt;

@@ -2,10 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 45px;
-    background-color: #dddddd3a;
     border-radius: 10px;
-    border: 4px solid #ddddddaf;
     padding: 50px 0px;
 }
 
@@ -24,6 +21,7 @@
     box-shadow: 2px 4px 5px #ddd;
     cursor: pointer;
     transition: 0.2s;
+    color: #000;
 }
 
 .product:hover {

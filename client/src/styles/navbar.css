@@ -4,6 +4,7 @@ nav {
     justify-content: space-between;
     font-family: 'JetBrains Mono';
     font-size: 1em;
+    width: 100%;
 }
 
 nav img {
@@ -33,5 +34,4 @@ nav li:hover {
 
 a {
     text-decoration: none;
-    color: #ffff;
 }

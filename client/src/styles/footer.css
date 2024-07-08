@@ -1,0 +1,25 @@
+.footer-info {
+    width: 30%;
+}
+
+.footer-info > div {
+    margin: 0px 15px;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer img {
+    width: 70px;
+}
+
+footer p {
+    font-size: 0.8em;
+    width: 70%;
+}

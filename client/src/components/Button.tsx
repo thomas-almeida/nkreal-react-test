@@ -7,7 +7,9 @@ export default function Button(
 
     return (
         <>
-            <button onClick={props.function}>
+            <button
+                onClick={props.function}
+            >
                 {
                     props.text
                 }

@@ -7,7 +7,7 @@ export default function Home() {
             <main>
                 <div className="cover-banner">
                     <div className="cover-banner-content">
-                        <Navbar />
+                        <Navbar lgColor="white" />
                         <div className="branding">
                             <h1>NK REAL CHOPPA</h1>
                             <p>"We are great because we are many, we represent a lifestyle"</p>
@@ -17,14 +17,12 @@ export default function Home() {
 
                 <div className="m-10 flex">
                     <h2 className="font-mono m-10">DROP DE PRODUTOS</h2>
-                    <div className="tag bg-warning">
-                        <p className="font-mono">Válidos Até <b>12/07/2024</b></p>
-                    </div>
                 </div>
-                
-                <div className="m-10">
+
+                <div className="m-10 my-20">
                     <ProducList />
                 </div>
+
 
             </main>
         </>

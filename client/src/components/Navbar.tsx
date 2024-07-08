@@ -1,20 +1,38 @@
 import { NavLink } from "react-router-dom"
 
-export default function Navbar() {
+export default function Navbar(props: { lgColor: string }) {
+
+    const colorStyle = props.lgColor === "white" ? "text-white" : "text-black"
+
     return (
         <>
             <nav>
 
-                <img src="/logo/logo-nk-white.png" alt="" />
+                <NavLink to="/">
+                    <img
+                        src={
+                            props.lgColor === "white"
+                                ? "logo/logo-nk-white.png"
+                                : "logo/logo-nk-black.png"
+                        }
+                        alt=""
+                    />
+                </NavLink>
 
                 <ul>
                     <li>
-                        <a href="/#product">
+                        <a
+                            href="/#product"
+                            className={colorStyle}
+                        >
                             Produtos
                         </a>
                     </li>
                     <li>
-                        <NavLink to="/carrinho">
+                        <NavLink
+                            to="/carrinho"
+                            className={colorStyle}
+                        >
                             Carrinho
                         </NavLink>
                     </li>
