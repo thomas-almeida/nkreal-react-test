@@ -6,6 +6,7 @@
 @import url(styles/footer.css);
 @import url(styles/product-details.css);
 @import url(styles/cart.css);
+@import url(styles/responsive.css);
 
 * {
     margin: 0;
@@ -80,9 +81,9 @@
 }
 
 .w-75 {
-    width: 75% !important;
+    width: 75%;
 }
 
 .w-50 {
-    width: 50% !important;
+    width: 50%;
 }

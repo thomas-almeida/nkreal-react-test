@@ -69,7 +69,7 @@ export default function Cart() {
                                 }
                             </div>
                         </div>
-                        <div className="m-10">
+                        <div className="m-10 resume">
                             {
                                 cartData.length > 0 ? (
                                     <>
