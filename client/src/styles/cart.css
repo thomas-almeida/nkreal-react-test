@@ -73,3 +73,11 @@
 .amount-buttons > p:hover {
     text-decoration: underline;
 }
+
+.cart-items img {
+    width: 125px;
+    margin-right: 5px;
+    border-radius: 5px;
+    object-fit: cover;
+    height: 115px;
+}

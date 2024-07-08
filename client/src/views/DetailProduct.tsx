@@ -21,7 +21,7 @@ export default function DetailProduct() {
             setProductData(product)
         }
 
-    }, [])
+    }, [setProductData])
 
     function addToCart(product: Product) {
         const productExist = cartData.find((productInCart) => productInCart.id === product.id)

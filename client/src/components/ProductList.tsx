@@ -14,7 +14,6 @@ export default function ProducList() {
 
     function getInfo(product: Product) {
         setProductData(product)
-        localStorage.setItem("currentProductData", JSON.stringify(product))
     }
 
     function addToCart(product: Product) {

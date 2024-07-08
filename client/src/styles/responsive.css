@@ -88,4 +88,12 @@
     .resume {
         width: 100%;
     }
+
+    .cart-items img {
+        width: 75px;
+        margin-right: 5px;
+        border-radius: 5px;
+        object-fit: cover;
+        height: 75px;
+    }
 }

@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import CartContext from "../components/CartContext";
 import { useContext, useEffect, useState } from "react";
 import { Product } from "../data/types";
+import { NavLink } from "react-router-dom";
 
 export default function Cart() {
 
@@ -27,7 +28,7 @@ export default function Cart() {
 
     useEffect(() => {
         setTotalValue(cartData.reduce((total, item) => total + item.price, 0))
-    })
+    }, [cartData])
 
     return (
         <>
@@ -52,7 +53,9 @@ export default function Cart() {
                                             key={cartItem.id}
                                             className="flex justify-left"
                                         >
-                                            <img src={cartItem.images[0]} alt="" />
+                                            <NavLink to={`/detalhes?id=${cartItem.id}`}>
+                                                <img src={cartItem.images[0]} alt="" />
+                                            </NavLink>
                                             <div className="">
                                                 <div className="flex items-center justify-left">
                                                     <h3>{cartItem.name}</h3>
@@ -75,7 +78,7 @@ export default function Cart() {
                                     <>
                                         <h2>Finalizar Compra</h2>
                                         <h3>Total</h3>
-                                        <h4>R${totalValue.toFixed(2).replace('.',',')}</h4>
+                                        <h4>R${totalValue.toFixed(2).replace('.', ',')}</h4>
                                         <b>Pagamento</b>
                                         <div className="flex space-around dual-buttons">
                                             <Button
