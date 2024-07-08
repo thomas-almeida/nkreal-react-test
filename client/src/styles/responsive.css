@@ -3,6 +3,14 @@
         grid-template-columns: repeat(1, 2fr);
     }
 
+    .product:hover {
+        transform: scale(1.0);
+    }
+
+    .product-details p {
+        width: auto;
+    }
+
     nav {
         justify-content: center;
         flex-wrap: wrap;
@@ -32,7 +40,6 @@
 
     .product-details-content {
         flex-wrap: wrap;
-        width: 90%;
         padding: 10px;
     }
 
@@ -65,7 +72,7 @@
         flex-wrap: wrap;
     }
 
-    .w-50 {
+    .w-50, .w-75 {
         width: auto !important;
     }
 
