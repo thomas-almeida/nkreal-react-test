@@ -5,6 +5,7 @@
 @import url(styles/promo-banner.css);
 @import url(styles/footer.css);
 @import url(styles/product-details.css);
+@import url(styles/cart.css);
 
 * {
     margin: 0;
@@ -80,4 +81,8 @@
 
 .w-75 {
     width: 75% !important;
+}
+
+.w-50 {
+    width: 50% !important;
 }

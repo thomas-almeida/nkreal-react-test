@@ -5,14 +5,33 @@ import Button from "./Button"
 import { Product } from "../data/types"
 import { useContext } from "react"
 import ProductContext from "./ProductContext"
+import CartContext from "./CartContext"
 
 export default function ProducList() {
 
     const { setProductData } = useContext(ProductContext)
+    const { cartData, setCartData } = useContext(CartContext)
 
     function getInfo(product: Product) {
         setProductData(product)
         localStorage.setItem("currentProductData", JSON.stringify(product))
+    }
+
+    function addToCart(product: Product) {
+        const productExist = cartData.find((productInCart) => productInCart.id === product.id)
+
+        if (productExist) {
+            setCartData(
+                (prevCart) =>
+                    prevCart.map(
+                        (item) => item.id === product.id
+                            ? { ...item, amount: item.amount + 1, price: item.price * (item.amount + 1) }
+                            : item
+                    )
+            )
+        } else {
+            setCartData((prevCart) => [...prevCart, { ...product, amount: 1 }])
+        }
     }
 
     return (
@@ -46,7 +65,7 @@ export default function ProducList() {
                                 </NavLink>
                                 <Button
                                     text="Adicionar Ao Carrinho"
-                                    function={() => getInfo(product)}
+                                    function={() => addToCart(product)}
                                 />
                             </li>
                         ))

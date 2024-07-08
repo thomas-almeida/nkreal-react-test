@@ -5,23 +5,27 @@ import Home from './views/Home'
 import Cart from './views/Cart'
 import DetailProduct from './views/DetailProduct'
 import ProductContext from './components/ProductContext'
+import CartContext from './components/CartContext'
 import { useState } from 'react'
 import { Product } from './data/types'
 
 function App() {
 
   const [productData, setProductData] = useState<Product>()
+  const [cartData, setCartData] = useState<Product[]>([])
 
   return (
 
     <ProductContext.Provider value={{ productData, setProductData }}>
-      <Router>
-        <Routes>
-          <Route path='/' element={<Home />}></Route>
-          <Route path='/carrinho' element={<Cart />}></Route>
-          <Route path='/detalhes' element={<DetailProduct />}></Route>
-        </Routes>
-      </Router>
+      <CartContext.Provider value={{ cartData, setCartData }}>
+        <Router>
+          <Routes>
+            <Route path='/' element={<Home />}></Route>
+            <Route path='/carrinho' element={<Cart />}></Route>
+            <Route path='/detalhes' element={<DetailProduct />}></Route>
+          </Routes>
+        </Router>
+      </CartContext.Provider>
     </ProductContext.Provider>
   )
 

@@ -10,7 +10,8 @@ export const productsInThisDrop: Product[] = [
             '/store/nk-store-1.jpg',
             '/store/nk-store-1.jpg',
             '/store/nk-store-1.jpg'
-        ]
+        ],
+        amount: 0
     },
     {
         id: 1,
@@ -21,7 +22,8 @@ export const productsInThisDrop: Product[] = [
             '/store/nk-store-2.jpg',
             '/store/nk-store-2.jpg',
             '/store/nk-store-2.jpg'
-        ]
+        ],
+        amount: 0
     },
     {
         id: 2,
@@ -32,7 +34,8 @@ export const productsInThisDrop: Product[] = [
             '/store/nk-store-3.jpg',
             '/store/nk-store-3.jpg',
             '/store/nk-store-3.jpg'
-        ]
+        ],
+        amount: 0
     },
     {
         id: 3,
@@ -43,7 +46,8 @@ export const productsInThisDrop: Product[] = [
             '/store/nk-store-4.jpg',
             '/store/nk-store-4.jpg',
             '/store/nk-store-4.jpg'
-        ]
+        ],
+        amount: 0
     },
     {
         id: 4,
@@ -54,7 +58,8 @@ export const productsInThisDrop: Product[] = [
             '/store/nk-store-5.png',
             '/store/nk-store-5.png',
             '/store/nk-store-5.png'
-        ]
+        ],
+        amount: 0
     },
     {
         id: 5,
@@ -65,6 +70,7 @@ export const productsInThisDrop: Product[] = [
             '/store/nk-store-6.jpg',
             '/store/nk-store-6.jpg',
             '/store/nk-store-6.jpg'
-        ]
+        ],
+        amount: 0
     },
 ]

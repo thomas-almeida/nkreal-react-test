@@ -1,12 +1,15 @@
 import Button from "../components/Button"
 import Navbar from "../components/Navbar"
 import ProductContext from "../components/ProductContext"
+import CartContext from "../components/CartContext"
 import { useContext, useEffect } from "react"
 import { productsInThisDrop } from "../data/products"
+import { Product } from "../data/types"
 
 export default function DetailProduct() {
 
     const { productData, setProductData } = useContext(ProductContext)
+    const { setCartData } = useContext(CartContext)
 
     useEffect(() => {
         const urlParams = new URLSearchParams(window.location.search)
@@ -18,6 +21,10 @@ export default function DetailProduct() {
         }
 
     }, [])
+
+    function addToCart(product: Product) {
+        setCartData((prevCart) => [...prevCart, product])
+    }
 
     return (
         <>
@@ -57,7 +64,7 @@ export default function DetailProduct() {
                                         <div className="w-75">
                                             <Button
                                                 text="Adicionar ao Carrinho"
-                                                function={() => console.log('aaa')}
+                                                function={() => addToCart(productData)}
                                             />
                                         </div>
                                     </div>
