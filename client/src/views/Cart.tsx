@@ -2,13 +2,32 @@
 import Button from "../components/Button";
 import Navbar from "../components/Navbar";
 import CartContext from "../components/CartContext";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
+import { Product } from "../data/types";
 
 export default function Cart() {
 
-    const { cartData } = useContext(CartContext)
+    const [totalValue, setTotalValue] = useState(Number)
+    const { cartData, setCartData } = useContext(CartContext)
 
+    function addAmount(product: Product) {
+        const productExist = cartData.find((productInCart) => productInCart.id === product.id)
 
+        if (productExist) {
+            setCartData(
+                (prevCart) =>
+                    prevCart.map(
+                        (item) => item.id === product.id
+                            ? { ...item, amount: item.amount + 1, price: item.price * (item.amount + 1) }
+                            : item
+                    )
+            )
+        }
+    }
+
+    useEffect(() => {
+        setTotalValue(cartData.reduce((total, item) => total + item.price, 0))
+    })
 
     return (
         <>
@@ -39,7 +58,11 @@ export default function Cart() {
                                                     <h3>{cartItem.name}</h3>
                                                     <p>x{cartItem.amount}</p>
                                                 </div>
-                                                <h4>R${cartItem.price.toFixed(2).replace('.', ',')}</h4>
+                                                <h2>R${cartItem.price.toFixed(2).replace('.', ',')}</h2>
+                                                <div className="flex justify-left amount-buttons">
+                                                    <p onClick={() => addAmount(cartItem)}>Adicionar</p>
+                                                    <p onCanPlay={() => console.log('')}>Remover</p>
+                                                </div>
                                             </div>
                                         </li>
                                     ))
@@ -47,24 +70,32 @@ export default function Cart() {
                             </div>
                         </div>
                         <div className="m-10">
-                            <h2>Finalizar Compra</h2>
-                            <h3>Total</h3>
-                            <h4>R$ 119,90</h4>
-                            <b>Pagamento</b>
-                            <div className="flex space-around dual-buttons">
-                                <Button
-                                    text="Cartão"
-                                    function={() => console.log('aaa')}
-                                />
-                                <Button
-                                    text="Pix"
-                                    function={() => console.log('aaa')}
-                                />
-                            </div>
-                            <Button
-                                text="Finalizar Compra"
-                                function={() => console.log('aa')}
-                            />
+                            {
+                                cartData.length > 0 ? (
+                                    <>
+                                        <h2>Finalizar Compra</h2>
+                                        <h3>Total</h3>
+                                        <h4>R${totalValue.toFixed(2).replace('.',',')}</h4>
+                                        <b>Pagamento</b>
+                                        <div className="flex space-around dual-buttons">
+                                            <Button
+                                                text="Cartão"
+                                                function={() => console.log('aaa')}
+                                            />
+                                            <Button
+                                                text="Pix"
+                                                function={() => console.log('aaa')}
+                                            />
+                                        </div>
+                                        <Button
+                                            text="Finalizar Compra"
+                                            function={() => console.log('aa')}
+                                        />
+                                    </>
+                                ) : (
+                                    <p>Nenhum Produto Adicionado</p>
+                                )
+                            }
                         </div>
                     </div>
                 </div>

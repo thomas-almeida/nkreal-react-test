@@ -9,7 +9,7 @@ import { Product } from "../data/types"
 export default function DetailProduct() {
 
     const { productData, setProductData } = useContext(ProductContext)
-    const { setCartData } = useContext(CartContext)
+    const { cartData, setCartData } = useContext(CartContext)
 
     useEffect(() => {
         const urlParams = new URLSearchParams(window.location.search)
@@ -23,7 +23,20 @@ export default function DetailProduct() {
     }, [])
 
     function addToCart(product: Product) {
-        setCartData((prevCart) => [...prevCart, product])
+        const productExist = cartData.find((productInCart) => productInCart.id === product.id)
+
+        if (productExist) {
+            setCartData(
+                (prevCart) =>
+                    prevCart.map(
+                        (item) => item.id === product.id
+                            ? { ...item, amount: item.amount + 1, price: item.price * (item.amount + 1) }
+                            : item
+                    )
+            )
+        } else {
+            setCartData((prevCart) => [...prevCart, { ...product, amount: 1 }])
+        }
     }
 
     return (

@@ -12,7 +12,7 @@
 }
 
 .cart-container-content h2 {
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     font-size: 1.9em;
 }
 
@@ -61,4 +61,15 @@
 .cart-items h3 {
     font-weight: bold;
     font-size: 1.3em;
+}
+
+.amount-buttons > p {
+    font-size: 1em;
+    cursor: pointer;
+    margin-left: 0;
+    margin-right: 15px;
+}
+
+.amount-buttons > p:hover {
+    text-decoration: underline;
 }
