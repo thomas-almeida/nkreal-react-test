@@ -5,6 +5,12 @@
 ## Descrição
 Este teste tem como objetivo avaliar suas habilidades em desenvolvimento front-end utilizando React e TypeScript. Você será responsável por criar uma aplicação simples de e-commerce com três páginas principais: lista de produtos, detalhes do produto e carrinho de compras.
 
+## Instalação
+Por ser apenas um app FrontEnd, basta instalar as dependências na pasta **client** do projeto
+```bash
+    $ npm install
+```
+
 ## Requisitos
 - Utilizar React Vanilla, TypeScript e Material UI.
 - Utilizar arquivos .css para estilização.
