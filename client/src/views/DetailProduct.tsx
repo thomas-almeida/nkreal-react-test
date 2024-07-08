@@ -1,11 +1,23 @@
 import Button from "../components/Button"
 import Navbar from "../components/Navbar"
 import ProductContext from "../components/ProductContext"
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
+import { productsInThisDrop } from "../data/products"
 
 export default function DetailProduct() {
 
-    const { productData } = useContext(ProductContext)
+    const { productData, setProductData } = useContext(ProductContext)
+
+    useEffect(() => {
+        const urlParams = new URLSearchParams(window.location.search)
+        const productId = urlParams.get('id')
+
+        if (productId !== null) {
+            const product = productsInThisDrop.find((product) => product.id === parseInt(productId, 10))
+            setProductData(product)
+        }
+
+    }, [])
 
     return (
         <>
@@ -23,22 +35,22 @@ export default function DetailProduct() {
                                     <div>
                                         <img
                                             className="product-image-principal"
-                                            src={productData.images[0]}
+                                            src={productData?.images[0]}
                                             alt=""
                                         />
                                     </div>
                                     <div className="flex justify-left product-image-secondary">
-                                        <img src={productData.images[0]} alt="" />
-                                        <img src={productData.images[0]} alt="" />
+                                        <img src={productData?.images[0]} alt="" />
+                                        <img src={productData?.images[0]} alt="" />
                                     </div>
                                 </div>
 
                                 <div className="text-black product-details-info flex-start flex font-mono">
 
                                     <div>
-                                        <h1>{productData.name}</h1>
-                                        <h2>{productData.price}</h2>
-                                        <p>{productData.description}</p>
+                                        <h1>{productData?.name}</h1>
+                                        <h2>R${productData?.price.toFixed(2).replace('.', ',')}</h2>
+                                        <p>{productData?.description}</p>
                                         <div className="tag bg-promo">
                                             <b>A Vista no Pix</b>
                                         </div>

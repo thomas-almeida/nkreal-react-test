@@ -12,6 +12,7 @@ export default function ProducList() {
 
     function getInfo(product: Product) {
         setProductData(product)
+        localStorage.setItem("currentProductData", JSON.stringify(product))
     }
 
     return (
@@ -26,7 +27,7 @@ export default function ProducList() {
                                 className="product"
                             >
                                 <NavLink
-                                    to={`/detalhes?${product.id}`}
+                                    to={`/detalhes?id=${product.id}`}
                                     onClick={() => getInfo(product)}
                                 >
                                     <div className="text-black">
