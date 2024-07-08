@@ -1,7 +1,7 @@
 
 import Button from "../components/Button";
 import Navbar from "../components/Navbar";
-import CartContext from "../components/CartContext";
+import CartContext from "../store/CartContext";
 import { useContext, useEffect, useState } from "react";
 import { Product } from "../data/types";
 import { NavLink } from "react-router-dom";

@@ -4,8 +4,8 @@ import { NavLink } from "react-router-dom"
 import Button from "./Button"
 import { Product } from "../data/types"
 import { useContext } from "react"
-import ProductContext from "./ProductContext"
-import CartContext from "./CartContext"
+import ProductContext from "../store/ProductContext"
+import CartContext from "../store/CartContext"
 
 export default function ProducList() {
 
