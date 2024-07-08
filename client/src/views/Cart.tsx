@@ -26,6 +26,33 @@ export default function Cart() {
         }
     }
 
+    function removeItem(product: Product) {
+        const productExist = cartData.find((productInCart) => productInCart.id === product.id)
+
+        if (productExist) {
+            setCartData(
+                (prevCart) =>
+                    prevCart.map(
+                        (item) => item.id === product.id
+                            ? {
+                                ...item,
+                                amount: item.amount - 1,
+                                price: item.price / item.amount
+                            }
+                            : item
+                    )
+            )
+        }
+    }
+
+    useEffect(() => {
+        cartData.forEach((itemInCart, index) => {
+            if (itemInCart.amount === 0) {
+                cartData.splice(index, 1)
+            }
+        })
+    }, [cartData])
+
     useEffect(() => {
         setTotalValue(cartData.reduce((total, item) => total + item.price, 0))
     }, [cartData])
@@ -64,7 +91,7 @@ export default function Cart() {
                                                 <h2>R${cartItem.price.toFixed(2).replace('.', ',')}</h2>
                                                 <div className="flex justify-left amount-buttons">
                                                     <p onClick={() => addAmount(cartItem)}>Adicionar</p>
-                                                    <p onCanPlay={() => console.log('')}>Remover</p>
+                                                    <p onClick={() => removeItem(cartItem)}>Remover</p>
                                                 </div>
                                             </div>
                                         </li>
@@ -83,16 +110,16 @@ export default function Cart() {
                                         <div className="flex space-around dual-buttons">
                                             <Button
                                                 text="Cartão"
-                                                function={() => console.log('aaa')}
+                                                function={() => alert('Cartão Selecionado')}
                                             />
                                             <Button
                                                 text="Pix"
-                                                function={() => console.log('aaa')}
+                                                function={() => alert('Pix Selecionado')}
                                             />
                                         </div>
                                         <Button
                                             text="Finalizar Compra"
-                                            function={() => console.log('aa')}
+                                            function={() => alert('Processando Pagamento..')}
                                         />
                                     </>
                                 ) : (
